@@ -1,0 +1,165 @@
+
+<html>
+<body>
+<div class="page-head">
+    <h3>
+		<?php
+			$res = $this->getRes();
+			if($res[0]['result'] == 'CAPTURED'){
+				echo 'Order Completed Successfully';
+				echo '<br/>Order ID : '.$res[0]['udf1'];
+			} else if($res[0]['result'] == 'CANCELED'){
+				echo 'Order Cancelled';
+			}
+			 else {
+				echo 'Order failed';
+			}
+		?>
+    </h3>
+</div>
+<div style="width:600px;margin:0 auto 0 auto;">
+            
+            		<div style="width:48px; height:44px; margin:0 auto 0 auto;">
+                    <img src="<?= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK) ?>media/knet.jpg" width="48" height="44" />
+                    </div>
+                    
+                    <div style="float:left; width:600px; margin:10px 0 0 0; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#000515;">
+                    	K-net Payment Receipt
+                    
+                    </div>                      
+                    
+
+                    
+<div style="float:left; width:600px; margin:10px 0 0 0;	text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#000515;">
+                    	
+                        Transaction Details
+                    
+                    	</div>
+                    
+                    
+                     <div style="width:600px; margin:10px 0 0 0;text-align:center;font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:bold;color:#000515; float:left;">
+								<table width="100%" border="0" cellspacing="2" cellpadding="2">
+                                     	  <tr>
+                         <td style="background:#e0e0e0;	border:#d1d1d1 1px solid;text-align:left;	font-family:Arial, Helvetica, sans-serif;	font-size:13px;font-weight:normal;">
+				<strong>Payment ID</strong></td>
+                           	    <td style="border:#d1d1d1 1px solid;text-align:left;font-family:Arial, Helvetica, sans-serif;	font-size:13px;font-weight:normal"><?= $res[0]['payment_id'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                        <td style="background:#e0e0e0;	border:#d1d1d1 1px solid;text-align:left;font-family:Arial, Helvetica, sans-serif;font-size:13px;	font-weight:normal;">
+				<strong>Date/Time</strong></td>
+                        <td style="border:#d1d1d1 1px solid;text-align:left;	font-family:Arial, Helvetica, sans-serif;	font-size:13px;font-weight:normal"><?= date('Y-m-d H:i:s') ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                         <td style="background:#e0e0e0;	border:#d1d1d1 1px solid;text-align:left;	font-family:Arial, Helvetica, sans-serif;	font-size:13px;font-weight:normal;">
+				<strong>Payment Status</strong></td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['result'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                     	    <td style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Amount</strong> </td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['amount'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                     	    <td style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Order ID</strong></td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['udf1'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                     	    <td style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Transaction ID</strong></td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['transaction_id'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                     	    <td style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Authentication Code</strong></td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['auth'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                     	    <td style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Tracking ID </strong></td>
+                                     	    <td style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['track_id'] ?></td>
+                                   	    </tr>
+                                     	  <tr>
+                                       		
+                                             <td width="20%" style="background:#e0e0e0;
+		border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal;"><strong>Reference Number </strong></td>
+                                        	 <td width="20%" style="	border:#d1d1d1 1px solid;
+		text-align:left;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:13px;
+		font-weight:normal"><?= $res[0]['reference_id'] ?></td>
+                                        
+     									  </tr>
+                                       
+                                      
+                                      
+					 			  </table>
+                    
+						</div>
+
+				     
+				
+                        
+                        
+			
+                  
+            
+          </div>
+<?php
+	/*echo '<pre>';
+	print_r($this->getRes());*/
+
+?>
+<div style="clear:both; display:block; padding-top:20px;">
+<p><?php echo Mage::helper('knet')->__('Please <a href="%s">continue shopping</a>.', $this->getContinueShoppingUrl()) ?></p>
+</div>
+</body>
+</html>

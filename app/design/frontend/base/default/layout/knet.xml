@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   design_default
+ * @package    Shrishti_Knet
+ * @copyright  Copyright (c) 2012 Shrishti Informatics (http://www.shrishtionline.com)
+ */
+
+-->
+<layout version="0.1.0">
+<!--
+Worldpay Failure Response Review
+-->
+<knet_redirect_auth>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+    </reference>
+    <reference name="content">
+        <block type="knet/failure" name="knet_failure" template="knet/failure.phtml" />
+    </reference>
+</knet_redirect_auth>
+<knet_redirect_error>
+    <reference name="root">
+        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+    </reference>
+    <reference name="content">
+        <block type="knet/cancel" name="knet_cancel" template="knet/cancel.phtml" />
+    </reference>
+    
+    
+</knet_redirect_error>
+</layout>

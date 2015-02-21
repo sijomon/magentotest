@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Shrishti_Knet>
+            <version>1.0.0</version>
+        </Shrishti_Knet>
+    </modules>
+    <frontend>
+        <routers>
+            <knet>
+                <use>standard</use>
+                <args>
+                    <module>Shrishti_Knet</module>
+                    <frontName>knet</frontName>
+                </args>
+            </knet>
+        </routers>
+        <layout>
+            <updates>
+                <knet>
+                    <file>knet.xml</file>
+                </knet>
+            </updates>
+        </layout>
+    </frontend> 
+    <global>
+        <models>
+            <knet>
+                <class>Shrishti_Knet_Model</class>
+                <resourceModel>knet_mysql4</resourceModel>
+            </knet>
+            <knet_mysql4>
+                <class>Shrishti_Knet_Model_Mysql4</class>
+                <entities>
+                    <knet>
+                        <table>knet</table>
+                    </knet>
+                </entities>
+            </knet_mysql4>
+        </models>
+        <resources>
+            <knet_setup>
+                <setup>
+                    <module>Shrishti_Knet</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </knet_setup>
+            <knet_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </knet_write>
+            <knet_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </knet_read>
+        </resources>
+        <blocks>
+            <knet>
+                <class>Shrishti_Knet_Block</class>
+            </knet>
+        </blocks>
+        <helpers>
+            <knet>
+                <class>Shrishti_Knet_Helper</class>
+            </knet>
+        </helpers>
+        
+        <template>
+<email>
+<knet>
+<label>Shrishti Email Template</label>
+<file>knet.html</file>
+<type>html</type>
+</knet>
+</email>
+</template>
+    </global>
+    
+    <default>
+        <payment>
+            <knet>
+                <active>1</active>
+                <model>knet/knet</model>
+                <order_status>processing</order_status>
+                <title>Shrishti Knet Method</title>
+		<payment_action>authorize</payment_action>
+                
+                 <enabled>1</enabled>
+                <recipient_email><![CDATA[shrishti@example.com]]></recipient_email>
+                <sender_email_identity>Knet</sender_email_identity>
+                <email_template>knet</email_template>
+            </knet>
+         </payment>
+    </default>
+</config>
